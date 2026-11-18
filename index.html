@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>机会地图 · Opportunity OS</title>
+  <meta name="description" content="2022–2024 年初中阶段教育资源官方配置指标，公开、可溯源、无需登录。">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">National education opportunity map · 公开展示版</div>
+          <h1 class="display">看见教育资源的差异，<br><em>让每一份支持都有依据。</em></h1>
+          <p class="lead">以 31 个大陆省级行政区为单元，公开展示 2022–2024 年初中阶段教师、科学实验与数字教育配置。每一项指标保留来源、公式与年份；不把配置当作需求缺口。</p>
+          <div class="actions">
+            <a class="btn primary" href="./map.html">打开全国地图 →</a>
+            <a class="btn outline" href="./sources.html">数据来源 ↗</a>
+          </div>
+          <div style="margin-top:22px;display:flex;gap:15px;flex-wrap:wrap;font-size:10px;color:var(--muted)">
+            <span>✓ 无需登录</span><span>✓ 官方原表可追溯</span><span>✓ 缺失数据不填 0</span>
+          </div>
+        </div>
+        <div id="brief"></div>
+      </div>
+    </section>
+    <section class="section wrap">
+      <div class="section-head"><div><div class="eyebrow">01 · Three verified layers</div><h2>三类地图图层，全部可核验</h2><p>全国地图只保留教师与导师、科学实验、数字教育三类图层；历史年份为 2022、2023、2024。</p></div><a class="btn outline small" href="./compare.html">省份对比 →</a></div>
+      <div class="cards" id="layer-cards"></div>
+    </section>
+    <section class="section wrap" style="padding-top:0">
+      <div class="note">公开展示版直接读取随站点发布的 JSON/GeoJSON 快照，不依赖后端或登录。管理员、实时 AI、DeepSeek 诊断等需要服务端的功能不在静态展示范围内。</div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="./assets/js/common.js"></script>
+  <script src="./assets/js/home.js"></script>
+</body>
+</html>

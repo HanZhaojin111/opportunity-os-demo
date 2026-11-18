@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>数据来源 · 机会地图</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="wrap" style="padding-top:42px;padding-bottom:54px">
+    <div class="eyebrow">Sources & method</div>
+    <h1 class="display" style="font-size:40px;margin:12px 0 10px">数据来源与覆盖</h1>
+    <p class="lead" style="font-size:12px">每条指标保存来源表、原表 URL、统计年、单位、分子、分母和公式。公开展示版直接读取随站点发布的 JSON 快照。</p>
+    <section class="section" style="padding-top:30px">
+      <div class="section-head"><div><div class="eyebrow">01 · Official statistics</div><h2>教育部 2022–2024 年初中阶段四表</h2></div></div>
+      <div class="source-list">
+        <div class="source-item"><div><h3>教育部 2024 年教育统计数据（各地基本情况）</h3><p>初中教育学生数 · 专任教师 · 学校校舍 · 学校资产；31 个大陆省级单元；发布 2025-12-25。</p></div><a href="https://hudong.moe.gov.cn/jyb_sjzl/moe_560/2024/gedi/" target="_blank" rel="noreferrer">原始来源 ↗</a></div>
+        <div class="source-item"><div><h3>教育部 2023 年教育统计数据（各地基本情况）</h3><p>同口径四表；31 个大陆省级单元；发布 2024-12-25。学生/教师/校舍/资产原表均已保存。</p></div><a href="https://hudong.moe.gov.cn/jyb_sjzl/moe_560/2023/gedi/" target="_blank" rel="noreferrer">原始来源 ↗</a></div>
+        <div class="source-item"><div><h3>教育部 2022 年教育统计数据（各地基本情况）</h3><p>同口径四表；31 个大陆省级单元；发布 2023-12-29。</p></div><a href="https://hudong.moe.gov.cn/jyb_sjzl/moe_560/2022/gedi/index_2.html" target="_blank" rel="noreferrer">原始来源 ↗</a></div>
+        <div class="source-item"><div><h3>geoBoundaries CHN ADM1</h3><p>34 个一级行政单元边界，仅用于地图可视化；Public Domain。</p></div><a href="https://www.geoboundaries.org/api/current/gbOpen/CHN/ADM1/" target="_blank" rel="noreferrer">原始来源 ↗</a></div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:10px">
+      <div class="section-head"><div><div class="eyebrow">02 · Coverage</div><h2>三年 × 五指标 × 31 省</h2><p>覆盖为 31/31；港澳台不纳入大陆省级比较，地图显示灰色。</p></div></div>
+      <div class="cards">
+        <div class="card"><span class="pill">2022</span><div class="big">155</div><p>31 省 × 5 指标；初中阶段。</p></div>
+        <div class="card"><span class="pill">2023</span><div class="big">155</div><p>31 省 × 5 指标；初中阶段。</p></div>
+        <div class="card"><span class="pill">2024</span><div class="big">155</div><p>31 省 × 5 指标；初中阶段。</p></div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:10px">
+      <div class="section-head"><div><div class="eyebrow">03 · Limits</div><h2>这些数据不能说明什么</h2></div></div>
+      <div class="note" style="font-size:11px;line-height:1.9">
+        指标为省级汇总的供给侧配置，不是需求调查、有效服务容量或学生个体数据。缺少同口径需求与容量时，不生成需求缺口、未满足比例、综合排名或项目投放人数。理化生实验室面积不等于实验开出率；学生终端数不等于一人一终端；网络多媒体教室占比不覆盖家庭网络和实际使用。
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="./assets/js/common.js"></script>
+  <script>document.getElementById("site-header").innerHTML=header("sources");document.getElementById("site-footer").innerHTML=footer();</script>
+</body>
+</html>

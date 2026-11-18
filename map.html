@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>全国地图 · 机会地图</title>
+  <link rel="stylesheet" href="./assets/vendor/maplibre-gl.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <div class="map-shell">
+    <aside class="map-side">
+      <div class="side-title">Resource layers</div>
+      <div id="layer-list"></div>
+      <div class="panel">
+        <div class="side-title">Map legend</div>
+        <div id="legend"></div>
+        <div class="metric-label" style="border-top:1px solid var(--line);padding-top:8px;margin-top:8px">全国 31 个大陆省级单元等分五档；深色=优先关注，浅色=相对较优。</div>
+      </div>
+      <div class="panel">
+        <div class="side-title">Year & coverage</div>
+        <select class="select" id="year" aria-label="选择年份">
+          <option value="2024">2024 年</option><option value="2023">2023 年</option><option value="2022">2022 年</option>
+        </select>
+        <div style="display:flex;justify-content:space-between;margin-top:9px;font-size:9px;color:var(--muted)"><span>覆盖</span><span id="coverage" class="mono"></span></div>
+      </div>
+      <div class="panel">
+        <div class="side-title">Current layer</div>
+        <select class="select" id="metric-select" aria-label="选择指标"></select>
+        <div id="current-note" class="metric-label" style="margin-top:8px"></div>
+      </div>
+    </aside>
+    <main class="map-main">
+      <div class="map-badge"><span id="map-layer-badge">科学实验</span> · <span id="map-year-badge">2024</span> · 原值着色</div>
+      <div id="map"></div>
+      <div class="map-hint">悬停查看指标 · 点击省份打开右侧详情 · 不含底图瓦片，边界来源 geoBoundaries</div>
+    </main>
+    <aside class="map-detail" id="detail"></aside>
+  </div>
+  <div id="site-footer"></div>
+  <script src="./assets/vendor/maplibre-gl.js"></script>
+  <script src="./assets/js/common.js"></script>
+  <script src="./assets/js/map.js"></script>
+</body>
+</html>
+

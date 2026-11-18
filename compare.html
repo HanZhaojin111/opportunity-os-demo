@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>省份对比 · 机会地图</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="wrap" style="padding-top:42px;padding-bottom:54px">
+    <div class="eyebrow">Province comparison · 2022–2024</div>
+    <h1 class="display" style="font-size:40px;margin:12px 0 10px">省份初中阶段配置对比</h1>
+    <p class="lead" style="font-size:12px">在同学段、同年份、同一指标和同一单位下比较官方统计计算值；缺失地区显示“数据不足”，不填 0，不计算需求缺口。</p>
+    <div class="two-selects">
+      <div><label class="metric-label">地区 A</label><select class="select" id="region-a"></select></div>
+      <div><label class="metric-label">地区 B</label><select class="select" id="region-b"></select></div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin-bottom:10px">
+      <div style="min-width:120px"><label class="metric-label">统计年份</label><select class="select" id="year" aria-label="选择年份"><option value="2024">2024 年</option><option value="2023">2023 年</option><option value="2022">2022 年</option></select></div>
+      <div style="min-width:220px"><label class="metric-label">指标</label><select class="select" id="metric-select" aria-label="选择指标"></select></div>
+    </div>
+    <div class="tabs" id="category-tabs"></div>
+    <div class="compare-grid">
+      <div class="card" style="padding:16px">
+        <div class="eyebrow">Official indicator</div>
+        <h2 id="chart-title" style="font-size:18px;margin:6px 0 0"></h2>
+        <p id="chart-sub" class="metric-label"></p>
+        <div id="chart-formula" class="note" style="margin-top:10px"></div>
+        <div id="chart" class="chart-box" style="margin-top:12px"></div>
+      </div>
+      <div class="card" style="padding:16px">
+        <div class="eyebrow">Region cards</div>
+        <h2 style="font-size:17px;margin:6px 0 10px">地区摘要</h2>
+        <div id="region-cards" style="display:grid;gap:10px"></div>
+        <div id="coverage-note" class="metric-label" style="margin-top:12px"></div>
+      </div>
+    </div>
+    <div class="card" style="padding:16px;margin-top:16px">
+      <div class="eyebrow">Category detail</div>
+      <h2 style="font-size:17px;margin:6px 0 10px">指标对比表</h2>
+      <div class="table-wrap" id="compare-table"></div>
+    </div>
+    <div class="note" style="margin-top:16px">数据为供给侧配置指标，不代表需求、未满足比例、服务质量或教育质量。缺失值保持空值。</div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="./assets/vendor/echarts.min.js"></script>
+  <script src="./assets/js/common.js"></script>
+  <script src="./assets/js/compare.js"></script>
+</body>
+</html>
