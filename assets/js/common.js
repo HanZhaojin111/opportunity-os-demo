@@ -1,4 +1,4 @@
-/* Shared helpers for the static GitHub Pages demo. */
+﻿/* Shared helpers for the static GitHub Pages demo. */
 const DEMO_BASE = "./";
 const demoState = { data: null, geo: null };
 
@@ -64,7 +64,25 @@ function footer() {
 function levelColor(level) {
   return ["#7a3b2a", "#9e563f", "#c27d62", "#ddab94", "#f0d5c8"][Math.max(0, Math.min(4, Number(level || 1) - 1))];
 }
-function fillMissing(map, features, dataset) {
-  const values = valueMap(dataset);
-  return features.map((f) => ({ code: f.properties.code, missing: !values.get(f.properties.code)?.metric_value }));
+function classifyDataset(dataset) {
+  const bands = [...(dataset.legend || [])].sort((a, b) => a.level - b.level);
+  const valid = (dataset.values || []).filter((v) => v.metric_value !== null && v.metric_value !== undefined);
+  const lowerIsBetter = dataset.metric?.direction === "lower_is_better";
+  const sorted = [...valid].sort((a, b) => lowerIsBetter ? b.metric_value - a.metric_value : a.metric_value - b.metric_value);
+  const levels = new Map();
+  let offset = 0;
+  bands.forEach((band, index) => {
+    const count = Number.isFinite(Number(band.count)) ? Number(band.count) : Math.ceil(valid.length / bands.length);
+    const slice = sorted.slice(offset, offset + count);
+    for (const row of slice) levels.set(row.region_code, band);
+    offset += count;
+  });
+  // The official legend counts should total 31; if a snapshot is incomplete,
+  // allocate any remainder by equal-count fallback rather than a rounded boundary.
+  for (let i = offset; i < sorted.length; i++) {
+    const fallback = bands[Math.min(bands.length - 1, Math.floor((i * bands.length) / sorted.length))];
+    levels.set(sorted[i].region_code, fallback);
+  }
+  return levels;
 }
+
